@@ -8,30 +8,109 @@
 # ============================================================================== #
 # ----- Aliases ----- #
 alias icat="kitty +kitten icat"
+alias ghi="~/Downloads/ghidra_9.1.2_PUBLIC/ghidraRun"
+alias z="sw zathura "
+alias rpi="sudo qemu-system-arm -kernel ~/qemu_vms/kernel-qemu-4.4.34-jessie -cpu arm1176 -m 256 -M versatilepb -serial stdio -append "root=/dev/sda2 rootfstype=ext4 rw" -hda ~/qemu_vms/raspbian.img -nic user,hostfwd=tcp::5022-:22"
+
+# -- Vim -> Nvim -- #
 alias vim="nvim"
 alias v="nvim"
-alias mpcd="mpc --host=127.0.0.1 --port=6601"
-alias ls="exa -F --group-directories-first --icons"
-alias lt="ls --tree --level=2"
-alias lg="ls --grid"  
-alias ll="ls -lahF --git"   
-alias llt="ll --tree --level=2"
-alias llg="ll --grid"
-alias la="ls -a"
 alias diary="nvim ~/vimwiki/diary/diary.md"
 alias vw="nvim ~/vimwiki/index.md"
+alias vwp="nvim ~/vimwiki/Tech/Programming.md"
+alias vwl="nvim ~/vimwiki/Tech/Linux.md"
+alias vwP="nvim ~/vimwiki/Tech/Projects.md"
 alias t="nvim ~/vimwiki/Life/TODO.md"
+alias :wq="exit"
+alias :q="exit"
 
+alias mpcd="mpc --host=127.0.0.1 --port=6601"
+
+# -- LS/EXA -- #
+alias ls="exa -F --group-directories-first --icons"
+alias lt="exa --tree --level=2"
+alias lg="exa --grid"  
+alias ll="exa -lahF --git"   
+alias llt="ll --tree --level=2"
+alias llg="ll --grid"
+alias la="exa -a"
+
+# -- X -- #
 alias startx='startx; /home/shadow/.pswitch'
 
+# -- Git -- #
 alias gpam='git push all master'
 alias gpa='git push all'
 alias gpo='git push origin'
 alias gpom='git push origin master'
+alias gpoc='git push origin config'
+alias gpod='git push origin dev'
+alias gpob='git push origin base_stable'
+alias gacp='~/.config/scripts/gacp'
+alias ga='git add'
+alias gl='git pull'
+alias gcam='git commit -a -m'
+alias gst='git status'
+alias gco='git checkout'
+alias gb='git branch'
 
+# -- Pacman/Yay -- #
 alias pS='sudo pacman -S'
 alias pR='sudo pacman -R'
 alias pRcns='sudo pacman -Rcns'
 alias pyy='sudo pacman -Syy'
 alias pyu='sudo pacman -Syu'
+alias pyyu='sudo pacman -Syyu'
 alias yS='yay -S'
+
+# -- DOOM/EMACS -- #
+alias dsu='doom sync -u'
+alias ds='doom sync'
+alias dc='doom compile'
+alias dsc='doom sync && doom compile'
+alias dsuc='doom sync -u && doom compile'
+alias dcl='doom clean'
+alias dupd='doom update'
+alias dupg='doom upgrade'
+alias enw='emacs -nw'
+
+# -- Programming -- #
+## C lang
+alias mk="make"
+alias mki="make install"
+alias mci="make clean install"
+alias smki="sudo make install"
+alias smki="sudo make clean install"
+alias msmi="make && sudo make install"
+alias msci="make && sudo make clean install"
+alias Dc="cd Documents/Programming/CLang/"
+## Asm
+alias nsm="nasm -f elf "
+alias lsm="ld -m elf_i386 -s -o "
+alias Da="cd Documents/Programming/Assembly/"
+## Haskell
+alias Dh="cd Documents/Programming/Haskell/"
+
+# -- HTB -- #
+## Machines
+alias dhtb="cd Documents/CTF/HTB/"
+## Challenges
+alias dhtbc="cd Documents/CTF/HTB/Challenges/"
+
+# -- Optimus -- #
+alias ost="optimus-manager --status"
+alias osi="optimus-manager --switch intel --no-confirm"
+alias osn="optimus-manager --switch nvidia --no-confirm"
+
+# -- School -- #
+## Directory
+alias dsd="cd Documents/SchoolWork/Fall2020/Databases/"
+
+# -- Java Apps -- #
+alias ditaa="java -jar /home/shadow/Documents/Tools/ditaa.jar"
+
+# -- Taskwarrior -- #
+alias t="task"
+alias tl="task list"
+alias ta="task add"
+alias td="task done"
